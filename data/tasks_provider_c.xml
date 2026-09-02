@@ -1,0 +1,7 @@
+<tasks>
+  <task>
+    <title>Migrar base de datos</title>
+    <priority>alta</priority>
+    <status>pendiente</status>
+  </task>
+</tasks>
