@@ -1,6 +1,6 @@
 from datetime import date
-from rest_framework import serializers
 from .models import Project, Task, Tag
+from rest_framework import serializers
 
 from .services import HolidayService
 

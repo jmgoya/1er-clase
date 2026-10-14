@@ -4,7 +4,9 @@ charset-normalizer==3.5.2
 Django==6.1
 django-filter==26.1
 djangorestframework==3.18.0
+djangorestframework_simplejwt==5.5.1
 idna==3.20
+PyJWT==2.15.1
 python-dotenv==1.2.3
 requests==2.34.2
 sqlparse==0.6.0
