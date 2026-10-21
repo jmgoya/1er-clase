@@ -38,3 +38,16 @@ class Task(models.Model):
  
     def __str__(self):
         return f"{self.title} ({self.project.name})"
+
+class ProjectMembership(models.Model):
+    ROLE_CHOICES = [("admin", "Administrador"), ("miembro", "Miembro")]
+ 
+    project = models.ForeignKey("Project", on_delete=models.CASCADE, related_name="memberships")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default="miembro")
+ 
+    class Meta:
+        unique_together = ("project", "user")
+ 
+    def __str__(self):
+        return f"{self.user} - {self.project} ({self.role})"

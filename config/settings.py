@@ -166,3 +166,13 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
     "ROTATE_REFRESH_TOKENS": True,
 }
+
+INSTALLED_APPS += [
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+]
+MIDDLEWARE += ["allauth.account.middleware.AccountMiddleware"]
+SITE_ID = 1

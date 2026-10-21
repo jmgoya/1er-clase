@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from core.views import RegisterView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from core.views import RegisterView, SocialLoginJWTView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,5 +27,7 @@ urlpatterns = [
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api-auth/", include("rest_framework.urls")),
     path("api/register/", RegisterView.as_view(), name="register"),
+    path("accounts/", include("allauth.urls")),
+    path("api/auth/social/jwt/", SocialLoginJWTView.as_view(), name="social_jwt"),
 ]
 
