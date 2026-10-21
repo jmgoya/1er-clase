@@ -176,3 +176,24 @@ INSTALLED_APPS += [
 ]
 MIDDLEWARE += ["allauth.account.middleware.AccountMiddleware"]
 SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "APP": {
+            "client_id": os.getenv("GOOGLE_CLIENT_ID", ""),
+            "secret": os.getenv("GOOGLE_CLIENT_SECRET", ""),
+        },
+        "SCOPE": ["profile", "email"],
+    }
+}
+
+LOGIN_REDIRECT_URL = "/api/auth/social/jwt/"
+
+# Si el email de Google coincide con un usuario existente, entra como ese usuario
+SOCIALACCOUNT_EMAIL_AUTHENTICATION = True
+SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
