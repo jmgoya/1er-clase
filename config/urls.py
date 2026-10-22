@@ -29,5 +29,6 @@ urlpatterns = [
     path("api/register/", RegisterView.as_view(), name="register"),
     path("accounts/", include("allauth.urls")),
     path("api/auth/social/jwt/", SocialLoginJWTView.as_view(), name="social_jwt"),
+    path("", include("frontend.urls")),
 ]
 

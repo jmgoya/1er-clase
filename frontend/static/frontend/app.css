@@ -1,0 +1,19 @@
+[x-cloak] { display: none !important; }
+
+.login-bg { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%); }
+.login-card { width: 100%; max-width: 400px; border-radius: 1rem; }
+.logo {
+  width: 64px; height: 64px; border-radius: 1rem; display: grid; place-items: center;
+  font-size: 2rem; color: #fff; background: linear-gradient(135deg, #6366f1, #ec4899);
+}
+
+.sidebar { min-height: calc(100vh - 57px); }
+.sidebar .list-group-item { border: 0; margin-bottom: 2px; }
+
+.stat-pendiente   { border-left: 4px solid var(--bs-secondary) !important; }
+.stat-en_progreso { border-left: 4px solid var(--bs-primary) !important; }
+.stat-completada  { border-left: 4px solid var(--bs-success) !important; }
+
+.task { transition: transform .15s, box-shadow .15s; }
+.task:hover { transform: translateY(-3px); box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .12) !important; }
+.dropdown-actions { white-space: nowrap; margin-right: -.5rem; }
